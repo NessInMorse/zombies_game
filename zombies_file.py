@@ -105,8 +105,8 @@ def eet_genees():
 def write_diary():
         note=input("Wat zou je toch willen schrijven in je dagboek? \n")
         newtext = open("dagboek.txt","a")
-        newtext.write(f"{asctime(localtime(time()))}____________________________________________________________")
-        newtext.write(f"\n\nDit is mijn note: {note} \n")
+        newtext.write(f"\n\n{asctime(localtime(time()))}____________________________________________________________")
+        newtext.write(f"Dit is mijn note: {note} \n")
         newtext.write(f"Zombie kill count: {zombies_killed} \n ")
         newtext.write(f"Dit zijn de voorwerpen in m'n tas {bag} \n ")
         newtext.close()
