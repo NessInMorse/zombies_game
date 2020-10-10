@@ -17,6 +17,12 @@ rooms_visited=[]
 count=0
 
 def maak_kamers(m_aantal):
+        """
+        Create rooms with random items
+        in: amount of items
+        out: dictionary with different items in rooms
+
+        """
         global rooms
         #De verschillende items die in de kamers gevonden kunnen worden
         items=["geweer","mes","medicijn","water","dagboek","voedsel"]
@@ -30,6 +36,12 @@ def maak_kamers(m_aantal):
         return rooms
 
 def zombie_gevecht(z_kamer):
+        """
+        Creates a possible fighting sequence if zombies are in the room
+        in: designated room
+        out: whether the player loses
+
+        """
 
         global hp
         global atk_power
@@ -70,6 +82,13 @@ def zombie_gevecht(z_kamer):
 
 
 def spullen_vinden(s_kamer):
+        """
+        Adds items to players' bag when they have entered a room safely (or killed all the zombies)
+        in: designated room (with the items)
+        out: bag gets more items,
+                player upgrades their fighting power
+
+        """
         global eqp
         items=len(rooms["kamer"+str((s_kamer+1))])
         for i in rooms["kamer"+str((s_kamer+1))]:
@@ -89,6 +108,12 @@ def spullen_vinden(s_kamer):
 
 
 def eet_genees():
+        """
+        Heals the player automatically whenever they get low in hp
+        in: hp value
+        out: new hp value after healing
+
+        """
         global hp
         if hp<5 and bag.count("medicijn")>0:
                 bag.remove("medicijn")
@@ -103,6 +128,12 @@ def eet_genees():
 
 
 def write_diary():
+        """
+        Writes in a 'dagboek.txt'-file the date, notes, killcount and items in bag
+        in: zombiekills and bag
+        out: a file containing the zombie kills and the bag
+
+        """
         note=input("Wat zou je toch willen schrijven in je dagboek? \n")
         newtext = open("dagboek.txt","a")
         newtext.write(f"\n\n{asctime(localtime(time()))}____________________________________________________________")
