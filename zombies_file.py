@@ -14,7 +14,6 @@ bag=[]
 zombies_killed=0
 rooms_visited_count=0
 rooms_visited=[]
-count=0
 
 def maak_kamers(m_aantal):
         """
