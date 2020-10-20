@@ -1,8 +1,5 @@
-from random import choice
-from random import randint
-from time import time
-from time import localtime
-from time import asctime
+from random import choice,randint
+from time import time,localtime,asctime
 
 rooms={}
 
